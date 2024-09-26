@@ -1,4 +1,4 @@
-From 632a60e280fbdab1ddaef2b949033b415d3cde3e Mon Sep 17 00:00:00 2001
+From 77a52090c310061aa918ebba2ec2d519390be1ca Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
 Date: Tue, 17 Nov 2020 13:00:39 -0600
 Subject: [PATCH] flatpak: Expose Widevine into the sandbox
@@ -10,12 +10,12 @@ Subject: [PATCH] flatpak: Expose Widevine into the sandbox
  3 files changed, 131 insertions(+), 24 deletions(-)
 
 diff --git a/content/browser/zygote_host/zygote_host_impl_linux.cc b/content/browser/zygote_host/zygote_host_impl_linux.cc
-index 522c90e0c9da5..b3389ba7fb892 100644
+index c9b7c54b858b3..4e4d0fb4701cc 100644
 --- a/content/browser/zygote_host/zygote_host_impl_linux.cc
 +++ b/content/browser/zygote_host/zygote_host_impl_linux.cc
-@@ -10,7 +10,10 @@
+@@ -9,7 +9,10 @@
+ #include <sys/types.h>
  
- #include "base/allocator/allocator_extension.h"
  #include "base/files/file_enumerator.h"
 +#include "base/files/file_util.h"
  #include "base/logging.h"
@@ -25,7 +25,7 @@ index 522c90e0c9da5..b3389ba7fb892 100644
  #include "base/process/kill.h"
  #include "base/process/launch.h"
 @@ -18,9 +21,12 @@
- #include "base/strings/string_number_conversions.h"
+ #include "base/types/fixed_array.h"
  #include "build/build_config.h"
  #include "build/chromeos_buildflags.h"
 +#include "chrome/common/chrome_paths.h"  // nogncheck
@@ -45,7 +45,7 @@ index 522c90e0c9da5..b3389ba7fb892 100644
  
  #if BUILDFLAG(IS_CHROMEOS)
  #include "content/common/zygote/zygote_communication_linux.h"
-@@ -187,8 +194,51 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -193,8 +200,51 @@ pid_t ZygoteHostImpl::LaunchZygote(
    if (is_sandboxed_zygote && use_namespace_sandbox_) {
      process = sandbox::NamespaceSandbox::LaunchProcess(*cmd_line, options);
    } else if (is_sandboxed_zygote && use_flatpak_sandbox_) {
@@ -100,7 +100,7 @@ index 522c90e0c9da5..b3389ba7fb892 100644
      process = base::LaunchProcess(*cmd_line, options);
    }
 diff --git a/sandbox/linux/services/flatpak_sandbox.cc b/sandbox/linux/services/flatpak_sandbox.cc
-index cdc225a18b815..f848b3360b8e6 100644
+index 2a915a5b9fa11..ed8d4c0556f63 100644
 --- a/sandbox/linux/services/flatpak_sandbox.cc
 +++ b/sandbox/linux/services/flatpak_sandbox.cc
 @@ -4,6 +4,7 @@
@@ -322,5 +322,5 @@ index 167bbc85945ad..de8e7165b4573 100644
                         base::WaitableEvent* event,
                         dbus::Response* response,
 -- 
-2.41.0
+2.45.1
 

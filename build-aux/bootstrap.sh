@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 # Needed to build GN itself.
-. /usr/lib/sdk/llvm14/enable.sh
+. /usr/lib/sdk/llvm17/enable.sh
 
 # GN will use these variables to configure its own build, but they introduce
 # compat issues w/ Clang and aren't used by Chromium itself anyway, so just
@@ -17,10 +17,10 @@ if [[ -d third_party/llvm-build/Release+Asserts/bin ]]; then
 else
   python3 tools/clang/scripts/build.py --disable-asserts \
       --skip-checkout --use-system-cmake --use-system-libxml \
-      --host-cc=/usr/lib/sdk/llvm14/bin/clang \
-      --host-cxx=/usr/lib/sdk/llvm14/bin/clang++ \
+      --host-cc=/usr/lib/sdk/llvm17/bin/clang \
+      --host-cxx=/usr/lib/sdk/llvm17/bin/clang++ \
       --target-triple=$(clang -dumpmachine) \
-      --without-android --without-fuchsia \
+      --without-android --without-fuchsia --without-zstd \
       --with-ml-inliner-model=
 fi
 
@@ -51,7 +51,8 @@ tools/gn/bootstrap/bootstrap.py -v --no-clean --gn-gen-args='
     use_system_libffi=true
     use_qt=false
     enable_remoting=false
-    enable_rust=false
+    rust_sysroot_absolute="/app/lib/sdk/rust-nightly"
+    rustc_version="'"$(/app/lib/sdk/rust-nightly/bin/rustc -V)"'"
 '
 mkdir -p out/ReleaseFree
 cp out/Release{,Free}/args.gn

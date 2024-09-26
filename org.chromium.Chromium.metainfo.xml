@@ -26,6 +26,94 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="129.0.6668.70" date="2024-09-24">
+      <description></description>
+    </release>
+    <release version="129.0.6668.58" date="2024-09-17">
+      <description/>
+    </release>
+    <release version="128.0.6613.137" date="2024-09-10">
+      <description/>
+    </release>
+    <release version="128.0.6613.119" date="2024-09-02">
+      <description/>
+    </release>
+    <release version="128.0.6613.113" date="2024-08-28">
+      <description/>
+    </release>
+    <release version="128.0.6613.84" date="2024-08-21">
+      <description/>
+    </release>
+    <release version="127.0.6533.119" date="2024-08-13">
+      <description/>
+    </release>
+    <release version="127.0.6533.99" date="2024-08-06">
+      <description/>
+    </release>
+    <release version="127.0.6533.88" date="2024-07-31">
+      <description/>
+    </release>
+    <release version="127.0.6533.72" date="2024-07-24">
+      <description/>
+    </release>
+    <release version="126.0.6478.182" date="2024-07-16">
+      <description/>
+    </release>
+    <release version="126.0.6478.126" date="2024-06-24">
+      <description/>
+    </release>
+    <release version="126.0.6478.114" date="2024-06-18">
+      <description/>
+    </release>
+    <release version="126.0.6478.61" date="2024-06-13">
+      <description/>
+    </release>
+    <release version="126.0.6478.55" date="2024-06-11">
+      <description/>
+    </release>
+    <release version="125.0.6422.141" date="2024-05-31">
+      <description/>
+    </release>
+    <release version="125.0.6422.112" date="2024-05-23">
+      <description/>
+    </release>
+    <release version="125.0.6422.76" date="2024-05-21">
+      <description/>
+    </release>
+    <release version="125.0.6422.60" date="2024-05-15"/>
+    <release version="124.0.6367.207" date="2024-05-13"/>
+    <release version="124.0.6367.201" date="2024-05-09"/>
+    <release version="124.0.6367.155" date="2024-05-07"/>
+    <release version="124.0.6367.118" date="2024-05-01"/>
+    <release version="124.0.6367.91" date="2024-04-25"/>
+    <release version="124.0.6367.78" date="2024-04-24"/>
+    <release version="124.0.6367.60" date="2024-04-15"/>
+    <release version="123.0.6312.122" date="2024-04-10"/>
+    <release version="123.0.6312.105" date="2024-04-03"/>
+    <release version="123.0.6312.86" date="2024-03-26"/>
+    <release version="123.0.6312.58" date="2024-03-19"/>
+    <release version="122.0.6261.128" date="2024-03-13"/>
+    <release version="122.0.6261.111" date="2024-03-06"/>
+    <release version="122.0.6261.94" date="2024-02-27"/>
+    <release version="122.0.6261.69" date="2024-02-22"/>
+    <release version="122.0.6261.57" date="2024-02-21"/>
+    <release version="121.0.6167.184" date="2024-02-13"/>
+    <release version="121.0.6167.160" date="2024-02-06"/>
+    <release version="121.0.6167.139" date="2024-01-30"/>
+    <release version="121.0.6167.85" date="2024-01-22"/>
+    <release version="120.0.6099.224" date="2024-01-16"/>
+    <release version="120.0.6099.216" date="2024-01-10"/>
+    <release version="120.0.6099.199" date="2024-01-04"/>
+    <release version="120.0.6099.129" date="2023-12-21"/>
+    <release version="120.0.6099.109" date="2023-12-13"/>
+    <release version="120.0.6099.71" date="2023-12-06"/>
+    <release version="119.0.6045.199" date="2023-11-28"/>
+    <release version="119.0.6045.159" date="2023-11-14"/>
+    <release version="119.0.6045.123" date="2023-11-08"/>
+    <release version="119.0.6045.105" date="2023-11-01"/>
+    <release version="118.0.5993.117" date="2023-10-25"/>
+    <release version="118.0.5993.88" date="2023-10-18"/>
+    <release version="118.0.5993.70" date="2023-10-11"/>
     <release version="117.0.5938.149" date="2023-10-03"/>
     <release version="117.0.5938.132" date="2023-09-27"/>
     <release version="117.0.5938.92" date="2023-09-21"/>
@@ -136,6 +224,5 @@
     <release version="85.0.4183.121" date="2020-09-29"/>
   </releases>
   <content_rating type="oars-1.1"/>
-  <translation/>
   <update_contact>rymg19_at_gmail.com</update_contact>
 </component>
